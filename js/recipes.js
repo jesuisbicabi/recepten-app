@@ -1,12 +1,9 @@
 import { supabaseClient } from "./supabase-client.js";
+import { showAdd } from "./views.js";
 
 const listEl = document.getElementById("recipe-list");
 const countEl = document.getElementById("recipe-count");
 const addBtn = document.getElementById("add-recipe-btn");
-
-function onAddRecipe() {
-  // Volgt in een volgende stap: nieuw recept toevoegen
-}
 
 function renderSkeleton() {
   listEl.setAttribute("aria-busy", "true");
@@ -53,7 +50,7 @@ function renderEmpty() {
   bigAddBtn.className = "add-btn add-btn-large";
   bigAddBtn.setAttribute("aria-label", "Nieuw recept toevoegen");
   bigAddBtn.textContent = "+";
-  bigAddBtn.addEventListener("click", onAddRecipe);
+  bigAddBtn.addEventListener("click", showAdd);
   el.appendChild(bigAddBtn);
   listEl.appendChild(el);
   countEl.textContent = "0 recepten";
@@ -128,7 +125,7 @@ function renderRecipes(recipes) {
   countEl.textContent = formatCount(recipes.length);
 }
 
-async function loadRecipes() {
+export async function loadRecipes() {
   renderSkeleton();
 
   const { data, error } = await supabaseClient
@@ -150,6 +147,6 @@ async function loadRecipes() {
   renderRecipes(data);
 }
 
-addBtn.addEventListener("click", onAddRecipe);
+addBtn.addEventListener("click", showAdd);
 
 loadRecipes();

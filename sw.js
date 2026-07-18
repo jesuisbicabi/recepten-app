@@ -1,10 +1,11 @@
-const CACHE_NAME = "recepten-app-shell-v1";
+const CACHE_NAME = "recepten-app-shell-v2";
 
 const APP_SHELL = [
   "./",
   "./index.html",
   "./css/design-tokens.css",
   "./js/app.js",
+  "./js/supabase-client.js",
   "./manifest.json"
 ];
 

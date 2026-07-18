@@ -1,5 +1,5 @@
 /*
- * Datamodel (gepland — Supabase-koppeling volgt in stap 3)
+ * Datamodel (schema staat in supabase/schema.sql)
  * ---------------------------------------------------------
  * recipes
  *   id, title, description, created_at, user_id
@@ -20,6 +20,8 @@
  * user_id staat overal al in het model klaar voor toekomstig delen
  * tussen gebruikers, maar wordt nu nog niet gebruikt.
  */
+
+import { supabase } from "./supabase-client.js";
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {

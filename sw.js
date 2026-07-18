@@ -1,11 +1,11 @@
 const CACHE_NAME = "recepten-app-shell-v1";
 
 const APP_SHELL = [
-  "/",
-  "/index.html",
-  "/css/design-tokens.css",
-  "/js/app.js",
-  "/manifest.json"
+  "./",
+  "./index.html",
+  "./css/design-tokens.css",
+  "./js/app.js",
+  "./manifest.json"
 ];
 
 self.addEventListener("install", (event) => {
@@ -43,6 +43,6 @@ self.addEventListener("fetch", (event) => {
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
         return response;
       });
-    }).catch(() => caches.match("/index.html"))
+    }).catch(() => caches.match("./index.html"))
   );
 });

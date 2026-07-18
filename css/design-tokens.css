@@ -1,0 +1,35 @@
+:root {
+  --bg: #121010;
+  --panel: #1B1817;
+  --panel-2: #211D1B;
+  --ink: #F1EBDF;
+  --ink-dim: #A49B91;
+  --brass: #C6A15B;
+  --hairline: rgba(198,161,91,.22);
+  --hairline-soft: rgba(239,232,220,.09);
+  --green: #7E8F6C;
+  --copper: #B4693C;
+  --r-lg: 22px; --r-md: 14px; --r-sm: 10px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Hanken Grotesk", system-ui, sans-serif;
+  font-size: 16px;
+  background:
+    radial-gradient(ellipse 130% 55% at 50% -5%, rgba(198,161,91,.06), transparent 60%),
+    #0C0B0A;
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, .heading {
+  font-family: "Marcellus", serif;
+  font-weight: 400;
+}

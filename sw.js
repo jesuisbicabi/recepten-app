@@ -1,4 +1,4 @@
-const CACHE_NAME = "recepten-app-shell-v3";
+const CACHE_NAME = "recepten-app-shell-v4";
 
 const APP_SHELL = [
   "./",

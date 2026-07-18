@@ -21,8 +21,6 @@
  * tussen gebruikers, maar wordt nu nog niet gebruikt.
  */
 
-import { supabase } from "./supabase-client.js";
-
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("./sw.js");

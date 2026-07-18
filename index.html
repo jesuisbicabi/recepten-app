@@ -86,9 +86,51 @@
   </form>
 </div>
 
+<div id="view-detail" hidden>
+  <div class="detail-container">
+    <div class="hero" id="detail-hero">
+      <img class="photo" id="detail-hero-img" alt="" hidden>
+      <div class="hero-fallback"><span>🍽</span></div>
+      <div class="hero-top">
+        <button type="button" class="chip-btn" id="detail-back-btn" aria-label="Terug naar lijst">←</button>
+        <button type="button" class="chip-btn" id="detail-photo-btn" aria-label="Foto wijzigen">📷</button>
+      </div>
+      <div class="hero-caption">
+        <div class="kicker" id="detail-kicker">Recept</div>
+        <h1 id="detail-title"></h1>
+      </div>
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-meta" id="detail-meta"></div>
+      <p class="detail-desc" id="detail-desc" hidden></p>
+
+      <div class="detail-section">
+        <h2 class="sec-title">Ingrediënten</h2>
+        <p class="sec-placeholder">Komt in de volgende stap</p>
+      </div>
+
+      <div class="detail-section">
+        <h2 class="sec-title">Bereidingswijze</h2>
+        <p class="sec-placeholder">Komt in de volgende stap</p>
+      </div>
+
+      <div class="detail-section">
+        <h2 class="sec-title">Voedingswaarden</h2>
+        <p class="sec-placeholder">Komt in de volgende stap</p>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="detail-photo-input" accept="image/*" hidden>
+</div>
+
+<div class="toast" id="toast"></div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script type="module" src="./js/app.js"></script>
 <script type="module" src="./js/recipes.js"></script>
 <script type="module" src="./js/add-recipe.js"></script>
+<script type="module" src="./js/recipe-detail.js"></script>
 </body>
 </html>

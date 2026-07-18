@@ -1,5 +1,6 @@
 import { supabaseClient } from "./supabase-client.js";
 import { showAdd } from "./views.js";
+import { openDetail } from "./recipe-detail.js";
 
 const listEl = document.getElementById("recipe-list");
 const countEl = document.getElementById("recipe-count");
@@ -104,7 +105,7 @@ function createRecipeCard(recipe) {
   body.append(title, desc, meta);
   card.append(imageWrap, body);
 
-  const openRecipe = () => console.log(recipe.id);
+  const openRecipe = () => openDetail(recipe.id);
   card.addEventListener("click", openRecipe);
   card.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {

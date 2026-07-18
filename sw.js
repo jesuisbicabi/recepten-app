@@ -1,4 +1,4 @@
-const CACHE_NAME = "recepten-app-shell-v4";
+const CACHE_NAME = "recepten-app-shell-v5";
 
 const APP_SHELL = [
   "./",
@@ -14,7 +14,11 @@ const APP_SHELL = [
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(APP_SHELL))
+      .then((cache) => Promise.all(
+        APP_SHELL.map((url) =>
+          fetch(url, { cache: "reload" }).then((response) => cache.put(url, response))
+        )
+      ))
       .then(() => self.skipWaiting())
   );
 });
